@@ -1,0 +1,12 @@
+[project]
+name = "learning-adk"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ddgs>=9.14.4",
+    "google-adk>=2.0.0",
+    "litellm>=1.85.1",
+    "tabulate>=0.10.0",
+]
