@@ -2,6 +2,7 @@ import datetime
 from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 from google.adk import Agent
+from google.adk.agents import SequentialAgent
 from google.adk.models.lite_llm import LiteLlm
 from google.adk.tools import google_search
 from ddgs import DDGS
@@ -128,3 +129,17 @@ root_agent = Workflow(
         travel_optimizer_agent
     )]
 )
+
+# root_agent = SequentialAgent(
+#     name="TravelPlanningSystem",
+#     # model=LiteLlm(AGENT_MODEL),#not needed for SequentialAgent
+#     # model=AGENT_MODEL, #not needed for SequentialAgent
+#     description="A comprehensive system that researches destinations, builds itineraries, and optimizes travel plans",
+#     sub_agents=[
+#         destination_research_agent,
+#         itinerary_builder_agent,
+#         travel_optimizer_agent,
+#     ],
+#     # instruction="You are a travel planner agent. Help the user plan their trip.",
+#     # tools=[get_weather, get_current_time],
+# )
